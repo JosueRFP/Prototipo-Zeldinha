@@ -11,12 +11,16 @@ public class AtackScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerMov = GetComponent<PlayerMov>();
+        enemyController = GetComponent<EnemyController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+        { 
+
+        }
     }
 }

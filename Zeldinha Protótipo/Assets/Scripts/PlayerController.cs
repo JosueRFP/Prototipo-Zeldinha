@@ -4,16 +4,18 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class PlayerMov : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] float vertical, horizontal;
+    [SerializeField] float vertical, horizontal, life, maxLife;
     [SerializeField] float speed;
+    [SerializeField] bool facinRight;
     public float Speed { get => speed; }
 
     // Start is called before the first frame update
     void Start()
     {
+        maxLife = life;
         rb = GetComponent<Rigidbody2D>();
     }
 

@@ -4,25 +4,38 @@ using UnityEngine;
 
 public class AtackScript : MonoBehaviour
 {
-    [SerializeField] PlayerController playerMov;
-    [SerializeField] EnemyController enemyController;
+   [SerializeField] GameObject Enemy;
+    [SerializeField] Transform effectController;
     public LayerMask layerMask;
-    
+    [SerializeField] GameObject atackEfect1;
+   
     // Start is called before the first frame update
     void Start()
     {
-        playerMov = GetComponent<PlayerController>();
-        enemyController = GetComponent<EnemyController>();
-
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        CollisionOnEnemys();
+    }
+
+    void InstatiateEffect()
+    {
+        GameObject atackEfect = Instantiate(atackEfect1, effectController.position, effectController.rotation);
+    }
+
+    void CollisionOnEnemys()
+    {
+        Collider2D col = GetComponent<Collider2D>();
         if (Input.GetButtonDown("Fire1"))
-        {
-            
+        {            
+            if (col.gameObject)
+            {
+                InstatiateEffect();
+            }
         }
+        
     }
 }

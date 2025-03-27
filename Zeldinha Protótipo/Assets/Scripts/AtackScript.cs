@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AtackScript : MonoBehaviour
 {
-    [SerializeField] float damege = -1;
     [SerializeField] PlayerController playerMov;
     [SerializeField] EnemyController enemyController;
     public LayerMask layerMask;
@@ -15,14 +14,15 @@ public class AtackScript : MonoBehaviour
         playerMov = GetComponent<PlayerController>();
         enemyController = GetComponent<EnemyController>();
 
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
-        { 
-
+        {
+            
         }
     }
 }

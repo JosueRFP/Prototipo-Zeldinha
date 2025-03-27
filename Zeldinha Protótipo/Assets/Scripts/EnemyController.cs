@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] float life;
+    public float life;
+    public float damege;
     // Start is called before the first frame update
     void Start()
     {
-        life = 3f;
+        life = 5f;
     }
 
     // Update is called once per frame

@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtackScript : MonoBehaviour
+public class AtackScriptSword : MonoBehaviour
 {
-   [SerializeField] GameObject Enemy;
-    [SerializeField] Transform effectController;
-    public LayerMask layerMask;
-    [SerializeField] GameObject atackEfect1;
+   [SerializeField] Transform effectController;
+   [SerializeField] GameObject atackEfect1;
    
     // Start is called before the first frame update
     void Start()
     {
-       
+        StartCoroutine(EfectControllerTimer()); 
     }
 
     // Update is called once per frame
@@ -21,6 +19,7 @@ public class AtackScript : MonoBehaviour
         CollisionOnEnemys();
     }
 
+    
     void InstatiateEffect()
     {
         GameObject atackEfect = Instantiate(atackEfect1, effectController.position, effectController.rotation);
@@ -34,8 +33,14 @@ public class AtackScript : MonoBehaviour
             if (col.gameObject)
             {
                 InstatiateEffect();
+                EfectControllerTimer();
             }
         }
         
+    }
+
+    IEnumerator EfectControllerTimer()
+    {
+        yield return new WaitForSeconds(3);
     }
 }

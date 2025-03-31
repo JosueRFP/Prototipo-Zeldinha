@@ -23,6 +23,7 @@ public class AtackScriptSword : MonoBehaviour
     void InstatiateEffect()
     {
         GameObject atackEfect = Instantiate(atackEfect1, effectController.position, effectController.rotation);
+        Destroy(atackEfect);
     }
 
     void CollisionOnEnemys()
@@ -34,6 +35,7 @@ public class AtackScriptSword : MonoBehaviour
             {
                 InstatiateEffect();
                 EfectControllerTimer();
+                
             }
         }
         

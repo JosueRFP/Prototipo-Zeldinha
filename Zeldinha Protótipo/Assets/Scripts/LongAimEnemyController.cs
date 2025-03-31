@@ -31,5 +31,6 @@ public class LongAimEnemyController : MonoBehaviour
     void Fire()
     {
         Instantiate(arrowPrefab, arrowPoint.position, arrowPoint.rotation);
+        Destroy(arrowPrefab);
     }
 }

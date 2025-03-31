@@ -23,7 +23,7 @@ public class AtackScriptSword : MonoBehaviour
     void InstatiateEffect()
     {
         GameObject atackEfect = Instantiate(atackEfect1, effectController.position, effectController.rotation);
-        Destroy(atackEfect);
+        Destroy(atackEfect, 0.2f);
     }
 
     void CollisionOnEnemys()

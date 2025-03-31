@@ -37,5 +37,8 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(horizontal, vertical) * Speed;
     }
 
-    
+    void Flip()
+    {
+        
+    }
 }

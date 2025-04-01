@@ -27,5 +27,9 @@ public class MenuController : MonoBehaviour
         Application.Quit();
         print("Quit");
     }
-    
+    public void Voltar()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
 }
